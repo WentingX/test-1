@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+	<div class="hold-nav">
+		<div class="top-nav clearfix">
+			<ul id="ul">
+				<li><a href="javascript:;" class="current">全部商品 <em>9</em></a></li>
+				<li><a href="javascript:;">降价商品 <em>3</em></a></li>
+				<li><a href="javascript:;">库存紧张 <em>1</em></a></li>
+			</ul>
+			<div class="line"></div>
+		</div>
+		<div class="list-item" id="list-item">
+			<ul>
+				<li id="li1">
+					<dl>
+						<dt>
+							<div class="important">
+								<input type="checkbox" id="checkedThis">
+								<label for="checkedThis">全选</label>
+							</div>
+						</dt>
+						<dd>
+							<div class="list-info-top">
+								<input id="p1" type="checkbox">
+								<p><i></i><em>店铺:</em> <span>太平鸟男装旗舰店</span></p>
+							</div>
+							<div class="list-info-buttom clearfix">
+								<ul>
+									<li>
+										<input id="p1-1" type="checkbox">
+									</li>
+									<li>
+										<img src="images/n-1.jpg" alt="">
+									</li>
+									<li>
+										<a href="#">2件减30潮牌休闲牛仔衬衫男长袖修身青年男士水洗牛仔衬衣外套潮</a>
+									</li>
+								</ul>
+							</div>
+						</dd>
+						<dd>
+							<div class="list-info-top">
+								<input id="p2" type="checkbox">
+								<p><i></i><em>店铺:</em> <span>gthomme旗舰店</span></p>
+							</div>
+							<div class="list-info-buttom clearfix">
+								<ul>
+									<li>
+										<input id="p2-2" type="checkbox">
+									</li>
+									<li>
+										<img src="images/n-2.jpg" alt="">
+									</li>
+									<li>
+										<a href="#">gthomme秋冬款男士牛仔裤韩版修身原色青年小脚牛仔裤男裤加绒</a>
+									</li>
+								</ul>
+							</div>
+						</dd>
+						<dd>
+							<div class="list-info-top">
+								<input id="p3" type="checkbox">
+								<p><i></i><em>店铺:</em> <span>onet凡兔旗舰店</span></p>
+							</div>
+							<div class="list-info-buttom clearfix">
+								<ul>
+									<li>
+										<input id="p3-3" type="checkbox">
+									</li>
+									<li>
+										<img src="images/n-3.jpg" alt="">
+									</li>
+									<li>
+										<a href="#">凡兔男款韩版2016冬季棉袄新款青年男士外套男棉服潮棉衣男装衣服</a>
+									</li>
+								</ul>
+							</div>
+						</dd>
+						<dd>
+							<div class="list-info-top">
+								<input id="p4" type="checkbox">
+								<p><i></i><em>店铺:</em> <span>唐狮官方旗舰店</span></p>
+							</div>
+							<div class="list-info-buttom clearfix">
+								<ul>
+									<li>
+										<input id="p4-4" type="checkbox">
+									</li>
+									<li>
+										<img src="images/n-4.jpg" alt="">
+									</li>
+									<li>
+										<a href="#">【买送】唐狮冬季牛仔裤男小脚修身型青少年休闲弹力抓痕裤子长裤</a>
+									</li>
+								</ul>
+							</div>
+						</dd>
+					</dl>
+				</li>
+				<li id="li2" style="display: none;">2</li>
+				<li id="li3" style="display: none;">3</li>
+			</ul>
+		</div>
+	</div>
+	<script>
+		var lis = $("ul").getElementsByTagName("li");
+		var arr = $("list-item").children[0].children;
+
+		for(var i=0;i<lis.length;i++) {
+			lis[i].index = i;
+			lis[i].onclick = function(){
+				var index = this.index;
+				for(var i=0;i<lis.length;i++){
+					arr[i].style = "display: none;";
+				}
+				arr[index].style = "height: 800px;";
+			};
+		}
+
+		var arr3=[],arr1=[];
+		arr3.push($("p1-1"),$("p2-2"),$("p3-3"),$("p4-4"));
+		arr1.push($("p1"),$("p2"),$("p3"),$("p4"));
+		var arr2 = $("list-item").getElementsByTagName("input");
+
+		$("checkedThis").onclick = function(){
+			for(var i=0;i<arr2.length;i++){
+				arr2[i].checked = $("checkedThis").checked;
+			}
+		};
+
+		checkBox(arr3,arr1,$("checkedThis"))
+		checkBox(arr1,arr3,$("checkedThis"))
+
+		// 封装一个通过id找到元素的方法
+		function $(id) {
+			return document.getElementById(id);
+		}
+
+		// 封装一个小选项切换
+		function checkBox(ele,ele2,doc) {
+			for(var i=0;i<ele.length;i++) {
+				ele[i].index = i;
+				ele[i].onclick = function(){
+					var index = this.index;
+					ele2[index].checked = this.checked;
+					var xiaoming = true;
+					for(var i=0;i<ele.length;i++){
+						if(!ele2[i].checked){
+							xiaoming = false;
+							break;
+						}
+					}
+					doc.checked = xiaoming;
+				};
+			}
+		}
+
+	</script>
+</body>
+</html>

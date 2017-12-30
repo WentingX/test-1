@@ -1,0 +1,189 @@
+/*css 初始化 start */
+
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+/*各浏览器显示不同，去掉边框等默认样式*/
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+/*防止拖动 影响布局*/
+textarea {
+    resize: none;
+}
+
+i,em,s {
+	font-style: normal;
+}
+
+/*去掉行内替换元素空白缝隙*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+table {
+    border-collapse: collapse;
+}
+a{
+	text-decoration: none;
+	color: #333;
+	font: 300 12px "Microsoft yahei";
+}
+a:hover {
+	color: #f40;
+}
+/*清除浮动*/
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1; /*IE/7/6*/
+}
+/*初始化 end*/
+
+
+/*头部信息 start*/
+.hold-nav {
+	width: 990px;
+	margin: 50px auto;
+}
+.top-nav ul li {
+	float: left;
+	cursor: pointer;
+}
+.top-nav ul li a {
+	font: 700 16px/35px "Microsoft yahei";
+	padding-left: 15px;
+	padding-bottom: 22px;
+	color: #333;
+	float: left;
+}
+.top-nav ul li a:hover {
+	border-bottom: 2px solid #f40;
+	padding-bottom: 20px;
+	position: relative;
+}
+.top-nav ul li .current {
+	border-bottom: 2px solid #f40;
+	padding-bottom: 20px;
+	position: relative;
+}
+.top-nav ul li a em {
+	font: 300 16px consolas;
+	padding-right: 30px;
+	border-right: 1px solid #e8e8e8;
+}
+.top-nav ul li:last-child a em {
+	border: none;
+}
+.line {
+	width: 100%;
+	height: 2px;
+	float: left;
+	margin-top: -2px;
+	background-color: #e6e6e6;
+}
+/*头部信息 end*/
+
+/*信息主体 start*/
+.list-item ul li:first-child dl dt {
+	height: 80px;
+	position: relative;
+}
+.list-item ul li:first-child dl dd {
+	margin-bottom: 15px;
+}
+.list-item ul li:first-child dl dt input {
+	width: 13px;
+	height: 13px;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	margin-top: -6px;
+	-webkit-appearance: checkbox;
+    box-sizing: border-box;
+    border: initial;
+}
+.list-item ul li:first-child dl dt label {
+	position: absolute;
+    top: 50%;
+    left: 33px;
+    margin-top: -8px;
+    font: 200 12px "Microsoft yahei";
+    cursor: pointer;
+    color: #333;
+}
+.list-item > ul > li:nth-child(2) {
+	height: 800px;
+}
+.list-item > ul > li:nth-child(3) {
+	height: 800px;
+}
+.list-item > ul > li {
+	display: none;
+}
+.list-item > ul > .cur {
+	display: block;
+}
+/*信息主体 end*/
+
+
+/*具体的信息 start*/
+.list-info-top p {
+	display: inline-block;
+	font: 300 14px/38px "Microsoft yahei";
+}
+.list-info-top i {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background: url(../images/bg.png) no-repeat -20px -105px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.list-info-top span {
+	color: #666;
+}
+.list-info-buttom {
+	height: 119px;
+	padding-top: 20px;
+	border: 1px solid #e6e6e6;
+	background-color: #fff8e1;
+	box-sizing: border-box;
+}
+.list-info-buttom img {
+	border: 1px solid #e6e6e6;
+}
+.list-info-buttom ul li {
+	float: left;
+}
+.list-info-buttom ul li:first-child {
+	width: 45px;
+	box-sizing: border-box;
+}
+.list-info-buttom ul li:first-child input {
+	margin-left: 20px;
+}
+.list-info-buttom ul li:last-child {
+	width: 211px;
+	padding-right: 25px;
+	margin-left: 10px;
+}
+/*具体的信息 end*/
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<img src="img.jpg" alt="" width="50" height="50" id="pic"/>
+<script src="animate.js"></script>
+<script>
+    var pic = document.getElementById("pic");
+    //需求：鼠标在页面上点击 获取点击时的位置 然后让图片以动画效果飞过来
+    document.onmousemove = function (event) {
+        var event = event || window.event;
+        //鼠标在页面上的位置
+        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;
+        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;
+        //计算图片应该到的位置
+        var targetX = pageX - pic.offsetWidth / 2;
+        var targetY = pageY - pic.offsetHeight / 2;
+        //让图片以动画效果飞过来
+        animate(pic, {"top": targetY, "left": targetX});
+        /*pic.style.left = targetX + "px";
+        pic.style.top = targetY + "px";*/
+
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			background-color: skyblue;
+		}
+		ul{
+			background-color: whitesmoke;
+			list-style: none;
+			padding: 0;
+			width: 90px;
+			height: 90px;
+			border: 1px solid gray;
+			float: left;
+			margin: 10px;
+			border-radius: 10px;
+
+			/* 开启弹性布局 */
+			display: flex;
+		}
+		li{
+			width: 20px;
+			height: 20px;
+			margin: 5px;
+			background-color: gray;
+			border-radius: 50%;
+		}
+
+		/*  二号 水平居中 */
+		ul:nth-child(2){
+			justify-content: center;
+		}
+
+		/*  三号 靠右 */
+		ul:nth-child(3){
+			justify-content: flex-end;
+		}
+		/*  四号 靠右 上下居中 */
+		ul:nth-child(4){
+			justify-content: flex-end;
+			align-items: center;
+		}
+		/*  5号 左右居中 上下居中 */
+		ul:nth-child(5){
+			justify-content: center;
+			align-items: center;
+		}
+		/*  6号 左右 靠边 */
+		ul:nth-child(6){
+			justify-content: space-between;
+			
+		}
+		/*  7号 左右 靠边 第二个色子 在最下方 */
+		ul:nth-child(7){
+			justify-content: space-between;
+		}
+		ul:nth-child(7) li:nth-child(2){
+			align-self: flex-end;
+		}
+		/*  8号 中间的色子 左右 上下居中 第三个 在右下角 */
+		ul:nth-child(8){
+			justify-content: space-between;
+		}
+		ul:nth-child(8) li:nth-child(2){
+			align-self: center;
+		}
+		ul:nth-child(8) li:nth-child(3){
+			align-self: flex-end;
+		}
+		/*  9号 从上往下排布 */
+		ul:nth-child(9){
+			justify-content: space-between;
+			flex-direction: column;
+		}
+		/*  10号 从上往下排布 */
+		ul:nth-child(10){
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: space-between;
+		}
+		ul:nth-child(10) li{
+			margin: 10px;
+		}
+
+		/*  11号 从上往下排布 */
+		ul:nth-child(11){
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-content: space-between;
+		}
+		ul:nth-child(11) li{
+			margin: 5px 10px;
+		}
+		ul:nth-child(11) li:nth-child(3){
+			margin: 5px 35px;
+		}
+		
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</body>
+</html>
