@@ -17,7 +17,7 @@ var router = new VueRouter({
     { path: '/shopcar', component: ShopcarContainer },
     { path: '/search', component: SearchContainer },
     { path: '/home/newslist', component:NewsList},
-    { path: '/home/newsinfo', component: NewsInfo}
+    { path: '/home/newsinfo/:id', component: NewsInfo}
   ],
   linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类，默认的类叫做 router-link-active
 })
