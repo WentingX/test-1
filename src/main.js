@@ -16,8 +16,9 @@ Vue.filter('dateFormat',function(dataStr,pattern="YYYY-MM-DD HH:MM:SS"){
 import VueResource from 'vue-resource'
 // 2.2 安装 vue-resource
 Vue.use(VueResource)
-//配置请求的跟路径
+//配置请求的跟路径和全局设置post时表单数据格式组织形式
 Vue.http.options.root = "http://vue.studyit.io"
+Vue.http.options.emulateJSON = true;
 
 // 导入 MUI 的样式
 import './lib/mui/css/mui.min.css'
